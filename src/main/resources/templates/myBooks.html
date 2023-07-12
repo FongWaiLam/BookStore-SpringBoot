@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<head>
+  <meta charset="UTF-8">
+  <title>My Books</title>
+</head>
+<body>
+<div layout:fragment="page_content">
+  <!-- content for this page -->
+  <h1 class="text-center pt-4">My Book List</h1>
+  <div class="container my-5">
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Price (Pound)</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="b :${myBooks}">
+        <td th:text="${b.id}"></td>
+        <td th:text="${b.name}"></td>
+        <td th:text="${b.author}"></td>
+        <td th:number="${b.price}"></td>
+        <td><a th:href="@{/deleteMyList/{id}(id=${b.id})}"><i class="fa-solid fa-trash" style="color: red" ></i></a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<th:block layout:fragment="scripts">
+  <!-- add any scripts related to this page -->
+</th:block>
+</body>
+</html>

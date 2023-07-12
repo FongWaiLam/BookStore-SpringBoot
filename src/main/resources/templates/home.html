@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div layout:fragment="page_content">
+    <!-- content for this page -->
+    <div class="container text-center my-5">
+        <h1>Welcome to New Book Store !</h1>
+        <h6> Description of this store .......</h6>
+        <img src="/images/home.png" width="360px"/>
+    </div>
+</div>
+<th:block layout:fragment="scripts">
+    <!-- add any scripts related to this page -->
+</th:block>
+</body>
+</html>
